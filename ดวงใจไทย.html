@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ดวงใจไทย - ทำนายดวงและทดสอบบุคลิกภาพแบบไทยๆ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Fahkwang:wght@200;300;400;500;600;700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #9c27b0;
+            --primary-light: #d05ce3;
+            --primary-dark: #6a0080;
+            --secondary: #ff9800;
+            --secondary-light: #ffc947;
+            --secondary-dark: #c66900;
+            --accent: #00bcd4;
+            --dark: #1a1a2e;
+            --light: #f1f1f6;
+            --success: #4caf50;
+            --white: #ffffff;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --space: #0c0c22;
+            --space-light: #16213e;
+            --nebula: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            --stardust: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            --cosmic: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            --galaxy: linear-gradient(135deg, #16222a, #3a6073);
+            --magic: linear-gradient(to right, #ad5389, #3c1053);
+            --mystical: linear-gradient(to right, #4568dc, #b06ab3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+        }
+        
+        body {
+            background-color: var(--space);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23331D63' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%234A2F87'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.05) 0.5px, transparent 1px),
+                radial-gradient(circle at 45% 42%, rgba(255, 255, 255, 0.03) 0.5px, transparent 1px),
+                radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.06) 0.5px, transparent 1px),
+                radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.05) 0.5px, transparent 1px),
+                radial-gradient(circle at 25% 65%, rgba(255, 255, 255, 0.04) 0.5px, transparent 1px);
+            background-size: 250px 250px;
+            opacity: 0.8;
+        }
+        
+        .star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 5s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .shooting-star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            background: var(--mystical);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+            opacity: 0.5;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            margin-bottom: 15px;
+            font-family: 'Fahkwang', sans-serif;
+            font-weight: 600;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5);
+            color: var(--gold);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Fahkwang', sans-serif;
+        }
+        
+        .logo::before, .logo::after {
+            content: "✦";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .logo::before {
+            left: -40px;
+        }
+        
+        .logo::after {
+            right: -40px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+        }
+        
+        nav {
+            background-color: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 300;
+        }
+        
+        nav a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        nav a:hover::before, nav a.active::before {
+            width: 100%;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: var(--gold);
+            border-radius: 2px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background: var(--space);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--gold), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--gold), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(156, 39, 176, 0.5);
+        }
+        
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 16px 36px;
+            letter-spacing: 1px;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--secondary), var(--secondary-dark));
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        .btn-secondary::before {
+            background: linear-gradient(45deg, var(--secondary-dark), var(--secondary));
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.5);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: var(--space-light);
+            position: relative;
+        }
+        
+        .features::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.2rem;
+        position: relative;
+        display: block; /* เปลี่ยนจาก inline-block เป็น block */
+        width: 100%; /* เพิ่มความกว้าง 100% */
+        transform: none; /* ลบ transform ที่อาจทำให้ตำแหน่งผิดเพี้ยน */
+        left: auto; /* ลบ left ที่อาจทำให้ตำแหน่งผิดเพี้ยน */
+    }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: visible; /* เปลี่ยนจาก hidden เป็น visible เพื่อให้ไอคอนโผล่พ้นขอบได้ */
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px; /* เพิ่มระยะห่างด้านบนเพื่อรองรับไอคอน */
+            padding: 30px;
+            padding-top: 60px; /* เพิ่มพื้นที่ด้านบนให้มากขึ้น */
+        }
+        
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                rgba(156, 39, 176, 0.1), 
+                rgba(0, 188, 212, 0.1), 
+                rgba(255, 152, 0, 0.1), 
+                rgba(156, 39, 176, 0.1));
+            z-index: -1;
+            transform: scale(0.98);
+            filter: blur(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-content {
+            padding: 30px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .feature-content h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-content h3::after {
+            width: 100%;
+        }
+        
+        .feature-content p {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--mystical);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute; /* เปลี่ยนเป็น absolute เพื่อควบคุมตำแหน่งแน่นอน */
+            top: -50px; /* ปรับตำแหน่งให้อยู่เหนือขอบกล่อง */
+            left: 50%; /* วางกึ่งกลางแนวนอน */
+            transform: translateX(-50%); /* จัดให้อยู่กึ่งกลางจริงๆ */
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 2; /* ให้อยู่ด้านหน้าของกล่อง */
+            transition: all 0.3s ease;
+        }
+
+            /* ปรับ text-align ของ .text-center ให้ทำงานถูกต้อง */
+        .text-center {
+            text-align: center !important;
+        }
+        
+        /* เพิ่มส่วนเกี่ยวกับเรา */
+        #about-section {
+            padding: 80px 0;
+            background-color: var(--space);
+            position: relative;
+        }
+        
+        #about-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a1c71' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .about-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--gold);
+    }
+    
+    .about-image {
+        text-align: center;
+    }
+    
+    .about-image img {
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+        
+        .feature-icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(315deg, var(--gold), var(--primary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        #quiz-section {
+            padding: 80px 0;
+            background-color: var(--space);
+            position: relative;
+        }
+        
+        #quiz-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a1c71' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quiz-container {
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quiz-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(156, 39, 176, 0.1) 0deg,
+                rgba(0, 188, 212, 0.1) 90deg,
+                rgba(255, 152, 0, 0.1) 180deg,
+                rgba(156, 39, 176, 0.1) 270deg
+            );
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question.active {
+            display: block;
+        }
+        
+        .question h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .option {
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .option::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, rgba(156, 39, 176, 0.2), rgba(0, 188, 212, 0.2));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .option:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .option:hover::before {
+            width: 100%;
+        }
+        
+        .option.selected {
+            background: linear-gradient(to right, rgba(156, 39, 176, 0.3), rgba(0, 188, 212, 0.3));
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quiz-progress {
+            margin-top: 30px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+        
+        .progress-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-20deg);
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) skewX(-20deg); }
+            100% { transform: translateX(200%) skewX(-20deg); }
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        #result-section {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #result-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(156, 39, 176, 0.1) 0deg,
+                rgba(0, 188, 212, 0.1) 90deg,
+                rgba(255, 152, 0, 0.1) 180deg,
+                rgba(156, 39, 176, 0.1) 270deg
+            );
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .personality-type {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin: 30px 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+        
+        .personality-description {
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .trait {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trait:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, rgba(156, 39, 176, 0.2), rgba(0, 188, 212, 0.2));
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .share-buttons {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .share-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 0 10px;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .share-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .share-button:hover::before {
+            width: 100%;
+        }
+        
+        .share-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+        }
+        
+        #destiny-section {
+            padding: 80px 0;
+            background-color: var(--space-light);
+            position: relative;
+        }
+        
+        #destiny-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+        
+        .zodiac-item {
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .zodiac-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .zodiac-icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 2px;
+            background: linear-gradient(315deg, var(--gold), var(--primary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .zodiac-item:hover .zodiac-icon {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            color: var(--gold);
+        }
+        
+        .zodiac-item:hover .zodiac-icon::before {
+            opacity: 1;
+            padding: 3px;
+        }
+        
+        .zodiac-item p {
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+        
+        .zodiac-item:hover p {
+            color: var(--gold);
+        }
+        
+        .horoscope-result {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .horoscope-result::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(156, 39, 176, 0.1) 0deg,
+                rgba(0, 188, 212, 0.1) 90deg,
+                rgba(255, 152, 0, 0.1) 180deg,
+                rgba(156, 39, 176, 0.1) 270deg
+            );
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .horoscope-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .horoscope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .horoscope-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .horoscope-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .horoscope-category h4 {
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .horoscope-category h4::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .horoscope-category:hover h4::after {
+            width: 100%;
+        }
+        
+        .horoscope-category.love h4 {
+            color: var(--primary);
+        }
+        
+        .horoscope-category.love h4::after {
+            background: var(--primary);
+        }
+        
+        .horoscope-category.work h4 {
+            color: var(--success);
+        }
+        
+        .horoscope-category.work h4::after {
+            background: var(--success);
+        }
+        
+        .horoscope-category.money h4 {
+            color: var(--gold);
+        }
+        
+        .horoscope-category.money h4::after {
+            background: var(--gold);
+        }
+        
+        .horoscope-category.health h4 {
+            color: var(--accent);
+        }
+        
+        .horoscope-category.health h4::after {
+            background: var(--accent);
+        }
+        
+        .daily-advice {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .daily-advice:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .lucky-numbers {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .lucky-numbers h4 {
+            margin-bottom: 20px;
+        }
+        
+        .number-circles {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .number-circle {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .number-circle::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 2px;
+            background: linear-gradient(315deg, var(--gold), var(--primary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.6;
+        }
+        
+        .number-circle:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        #compatibility-section {
+            padding: 80px 0;
+            background-color: var(--space);
+            position: relative;
+        }
+        
+        #compatibility-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a1c71' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .compatibility-form {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .compatibility-form::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                rgba(156, 39, 176, 0.1) 0deg,
+                rgba(0, 188, 212, 0.1) 90deg,
+                rgba(255, 152, 0, 0.1) 180deg,
+                rgba(156, 39, 176, 0.1) 270deg
+            );
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .compatibility-field {
+            margin-bottom: 20px;
+        }
+        
+        .compatibility-field h4 {
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .compatibility-field select {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+            appearance: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .compatibility-field select:hover, .compatibility-field select:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .compatibility-field select option {
+            background-color: var(--space);
+            color: var(--light);
+        }
+        
+        .compatibility-result {
+            margin-top: 50px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .compatibility-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .compatibility-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .compatibility-icon {
+            text-align: center;
+            margin: 0 30px;
+            position: relative;
+        }
+        
+        .compatibility-icon .zodiac-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .compatibility-heart {
+            font-size: 2.5rem;
+            margin: 0 20px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+            position: relative;
+        }
+        
+        .compatibility-heart::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), transparent);
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+        }
+        
+        .compatibility-heart::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(to left, var(--primary), transparent);
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+        }
+        
+        .compatibility-score {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .compatibility-percentage {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .compatibility-bar {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 15px;
+            position: relative;
+        }
+        
+        .compatibility-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .compatibility-progress::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-20deg);
+            animation: shine 2s infinite;
+        }
+        
+        .compatibility-analysis {
+            margin-top: 30px;
+        }
+        
+        .compatibility-analysis h4 {
+            margin-bottom: 20px;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .compatibility-description {
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .compatibility-strengths-weaknesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .compatibility-strengths, .compatibility-weaknesses {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .compatibility-strengths:hover, .compatibility-weaknesses:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .compatibility-strengths h5, .compatibility-weaknesses h5 {
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .compatibility-strengths h5::after, .compatibility-weaknesses h5::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .compatibility-strengths:hover h5::after, .compatibility-weaknesses:hover h5::after {
+            width: 100%;
+        }
+        
+        .compatibility-strengths h5 {
+            color: var(--gold);
+        }
+        
+        .compatibility-strengths h5::after {
+            background: var(--gold);
+        }
+        
+        .compatibility-weaknesses h5 {
+            color: var(--secondary);
+        }
+        
+        .compatibility-weaknesses h5::after {
+            background: var(--secondary);
+        }
+        
+        .compatibility-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .compatibility-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+        }
+        
+        .compatibility-list li::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        
+        .compatibility-strengths .compatibility-list li::before {
+            background-color: var(--gold);
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+        
+        .compatibility-weaknesses .compatibility-list li::before {
+            background-color: var(--secondary);
+            box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+        }
+        
+        .compatibility-advice {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .compatibility-advice:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .compatibility-advice h5 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .compatibility-advice p {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        footer {
+            background-color: var(--space-light);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M81.28 88H68.413l19.298 19.298L81.28 88zm2.107 0h13.226L90 107.838 83.387 88zm15.334 0h12.866l-19.298 19.298L98.72 88zm-32.927-2.207L73.586 78h32.827l.5.5 7.294 7.293L115.414 87l-24.707 24.707-.707.707L64.586 87l1.207-1.207zm2.62.207L74 80.414 79.586 86H68.414L74 80.414zm16.5 0L86 80.414 91.586 86H80.414L86 80.414zm16.5 0L98 80.414 103.586 86H92.414L98 80.414zm-8.293 36.793L98 117.586 105.586 110H102.414l-5.5 5.5-.707.707L89.586 124l-1.293-1.293-6-6L76.414 110h7.172l3.707 3.707 1.414 1.414z' fill='%233a1c71' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            color: var(--gold);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-family: 'Fahkwang', sans-serif;
+        }
+        
+        .footer-tagline {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Athiti', sans-serif;
+            font-weight: 300;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .logo::before, .logo::after {
+                display: none;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .feature-grid, .compatibility-grid, .compatibility-strengths-weaknesses {
+                grid-template-columns: 1fr;
+            }
+            
+            .quiz-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .quiz-buttons .btn {
+                width: 100%;
+            }
+            
+            .zodiac-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .zodiac-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .horoscope-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .compatibility-icons {
+                flex-direction: column;
+            }
+            
+            .compatibility-icon {
+                margin: 20px 0;
+            }
+            
+            .compatibility-heart {
+                margin: 20px 0;
+            }
+            
+            .compatibility-heart::before, .compatibility-heart::after {
+                display: none;
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .pulsing {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .star-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="star-bg"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo animate__animated animate__fadeIn">✨ ดวงใจไทย ✨</div>
+            <div class="tagline animate__animated animate__fadeIn animate__delay-1s">ค้นพบตัวตนที่แท้จริงของคุณด้วยการทดสอบบุคลิกภาพและดูดวงแบบไทยๆ</div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#" class="active">หน้าหลัก</a>
+        <a href="#quiz-section">ทดสอบบุคลิกภาพ</a>
+        <a href="#destiny-section">ดูดวง</a>
+        <a href="#compatibility-section">ดูดวงความรัก</a>
+        <a href="#about-section">เกี่ยวกับเรา</a>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h2 data-aos="fade-up">ค้นหาตัวตนที่แท้จริงของคุณ</h2>
+            <p data-aos="fade-up" data-aos-delay="200">ทดสอบบุคลิกภาพแบบไทยๆ ที่ออกแบบมาเพื่อค้นหาลักษณะเฉพาะตัวของคุณตามความเชื่อแบบไทย ดูดวงชะตาและโหราศาสตร์ไทย พร้อมคำแนะนำที่จะช่วยให้คุณเข้าใจตัวเองและผู้อื่นได้ดียิ่งขึ้น</p>
+            <a href="#quiz-section" class="btn btn-large" data-aos="fade-up" data-aos-delay="400">เริ่มทดสอบเลย</a>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">บริการของเรา</h2>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-content">
+                        <h3>ทดสอบบุคลิกภาพเก้าธาตุ</h3>
+                        <p>ค้นพบว่าคุณเป็นคนในธาตุใดตามความเชื่อไทยโบราณ จะเป็น น้ำ ดิน ลม ไฟ ทอง เหล็ก แก้ว ไม้ หรือดิน ซึ่งจะบ่งบอกถึงลักษณะนิสัยและจุดแข็งของตัวคุณเอง</p>
+                        <a href="#quiz-section" class="btn">ทดสอบเลย</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🔮</div>
+                    <div class="feature-content">
+                        <h3>ดูดวงตามราศี</h3>
+                        <p>ดูดวงชะตาตามหลักโหราศาสตร์ไทย ทั้งเรื่องความรัก การงาน การเงิน และสุขภาพ พร้อมคำแนะนำเพื่อเสริมดวงในด้านต่างๆ ที่จะช่วยให้คุณรับมือกับสถานการณ์ต่างๆ ในชีวิต</p>
+                        <a href="#destiny-section" class="btn">ดูดวงเลย</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">❤️</div>
+                    <div class="feature-content">
+                        <h3>ดูดวงความรัก</h3>
+                        <p>วิเคราะห์ความเข้ากันกับคู่ของคุณตามหลักโหราศาสตร์ไทย ดูดวงเนื้อคู่ และแนะนำวิธีเสริมดวงความรักให้ราบรื่น เพื่อสร้างความสัมพันธ์ที่มั่นคงและยั่งยืน</p>
+                        <a href="#compatibility-section" class="btn">ดูความเข้ากัน</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz-section">
+        <div class="container section-content">
+            <h2 class="section-title" data-aos="fade-up">ทดสอบบุคลิกภาพเก้าธาตุ</h2>
+            <p class="text-center" data-aos="fade-up" data-aos-delay="100">ตอบคำถาม 10 ข้อต่อไปนี้เพื่อค้นหาว่าคุณเป็นคนในธาตุใด</p>
+            
+            <div class="quiz-container" data-aos="fade-up" data-aos-delay="200">
+                <div id="question-container">
+                    <div class="question active" data-id="1">
+                        <h3>1. เมื่อต้องเผชิญกับความท้าทายใหม่ๆ คุณมักจะ...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. กระโจนเข้าหาความท้าทายอย่างไม่ลังเล</div>
+                            <div class="option" data-type="earth">ข. วางแผนอย่างรอบคอบก่อนลงมือทำ</div>
+                            <div class="option" data-type="water">ค. ใช้สัญชาตญาณและความรู้สึกเป็นตัวนำทาง</div>
+                            <div class="option" data-type="air">ง. วิเคราะห์สถานการณ์และหาข้อมูลให้มากที่สุด</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="2">
+                        <h3>2. ในงานสังสรรค์ คุณมักจะ...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. เป็นจุดสนใจของงาน ชอบพูดคุยกับทุกคน</div>
+                            <div class="option" data-type="earth">ข. อยู่กับกลุ่มเพื่อนสนิท พูดคุยอย่างเป็นกันเอง</div>
+                            <div class="option" data-type="water">ค. สังเกตการณ์อยู่ห่างๆ และฟังมากกว่าพูด</div>
+                            <div class="option" data-type="air">ง. พูดคุยกับผู้คนที่มีความสนใจคล้ายกัน</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="3">
+                        <h3>3. เมื่อต้องตัดสินใจสำคัญ คุณมักจะ...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. ตัดสินใจอย่างรวดเร็วตามสัญชาตญาณ</div>
+                            <div class="option" data-type="earth">ข. ชั่งน้ำหนักข้อดีข้อเสียอย่างรอบคอบ</div>
+                            <div class="option" data-type="water">ค. คำนึงถึงความรู้สึกของทุกคนที่เกี่ยวข้อง</div>
+                            <div class="option" data-type="air">ง. หาข้อมูลให้มากที่สุดก่อนตัดสินใจ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="4">
+                        <h3>4. คุณชอบทำงานในสภาพแวดล้อมแบบไหน</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. มีความท้าทาย กระตุ้นให้คิดสร้างสรรค์</div>
+                            <div class="option" data-type="earth">ข. มีระเบียบแบบแผนชัดเจน มั่นคง</div>
+                            <div class="option" data-type="water">ค. มีความสงบ ผ่อนคลาย และเป็นส่วนตัว</div>
+                            <div class="option" data-type="air">ง. มีอิสระในการคิดและทำตามแนวทางของตัวเอง</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="5">
+                        <h3>5. เมื่อเกิดความขัดแย้ง คุณมักจะ...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. แสดงความคิดเห็นอย่างตรงไปตรงมา</div>
+                            <div class="option" data-type="earth">ข. พยายามหาทางประนีประนอมที่ทุกฝ่ายพอใจ</div>
+                            <div class="option" data-type="water">ค. หลีกเลี่ยงความขัดแย้งหรือถอยห่างจากสถานการณ์</div>
+                            <div class="option" data-type="air">ง. วิเคราะห์สถานการณ์อย่างเป็นกลางและหาทางออกที่ดีที่สุด</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="6">
+                        <h3>6. คุณมองตัวเองว่าเป็นคนแบบไหน</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. มีพลัง กล้าหาญ และมุ่งมั่น</div>
+                            <div class="option" data-type="earth">ข. น่าเชื่อถือ มั่นคง และรับผิดชอบ</div>
+                            <div class="option" data-type="water">ค. อ่อนโยน เห็นอกเห็นใจ และมีความรู้สึกลึกซึ้ง</div>
+                            <div class="option" data-type="air">ง. ฉลาด ช่างคิด และมีเหตุผล</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="7">
+                        <h3>7. ในความสัมพันธ์ คุณให้ความสำคัญกับสิ่งใดมากที่สุด</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. ความตื่นเต้นและความหลงใหล</div>
+                            <div class="option" data-type="earth">ข. ความมั่นคงและความเชื่อถือได้</div>
+                            <div class="option" data-type="water">ค. ความเข้าใจและความลึกซึ้งทางอารมณ์</div>
+                            <div class="option" data-type="air">ง. การสื่อสารและแลกเปลี่ยนความคิด</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="8">
+                        <h3>8. ในวันหยุด คุณชอบทำอะไร</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. ทำกิจกรรมผจญภัยหรือกีฬาที่ท้าทาย</div>
+                            <div class="option" data-type="earth">ข. ทำงานบ้าน ทำสวน หรือทำงานอดิเรก</div>
+                            <div class="option" data-type="water">ค. อ่านหนังสือ ฟังเพลง หรือทำสมาธิ</div>
+                            <div class="option" data-type="air">ง. เรียนรู้สิ่งใหม่ๆ หรือพูดคุยแลกเปลี่ยนความคิดกับผู้อื่น</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="9">
+                        <h3>9. เมื่อคุณรู้สึกเครียด คุณมักจะ...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. ออกกำลังกายหรือทำกิจกรรมที่ใช้พลังงาน</div>
+                            <div class="option" data-type="earth">ข. จัดระเบียบสิ่งของหรือทำตามแผนที่วางไว้</div>
+                            <div class="option" data-type="water">ค. หาที่สงบ ฟังเพลง หรือทำสมาธิ</div>
+                            <div class="option" data-type="air">ง. พูดคุยกับคนอื่นหรือหาข้อมูลเพื่อแก้ปัญหา</div>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-id="10">
+                        <h3>10. คุณมักจะตัดสินใจโดย...</h3>
+                        <div class="options">
+                            <div class="option" data-type="fire">ก. ความรู้สึกและสัญชาตญาณ</div>
+                            <div class="option" data-type="earth">ข. ประสบการณ์และสิ่งที่เคยได้ผลมาแล้ว</div>
+                            <div class="option" data-type="water">ค. ความรู้สึกและผลกระทบต่อผู้อื่น</div>
+                            <div class="option" data-type="air">ง. การวิเคราะห์และตรรกะ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-progress">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    
+                    <div class="quiz-buttons">
+                        <button id="prev-btn" class="btn" style="display: none;">ย้อนกลับ</button>
+                        <button id="next-btn" class="btn" disabled>ถัดไป</button>
+                    </div>
+                    </div>
+                    
+                    <div id="result-section" style="display: none;">
+                        <h3>ผลการทดสอบของคุณ</h3>
+                        <div id="result-image" class="floating">
+                            <div class="zodiac-icon pulsing"></div>
+                        </div>
+                        <div class="personality-type" id="personality-type">ธาตุไฟ (จิตวิญญาณแห่งความกล้าหาญ)</div>
+                        <div class="personality-description" id="personality-description">
+                            คุณเป็นคนมีพลังงานสูง กล้าหาญ และมีความมุ่งมั่น คุณชอบความท้าทายและไม่กลัวที่จะเสี่ยง คุณมีความเป็นผู้นำสูงและสามารถสร้างแรงบันดาลใจให้ผู้อื่นได้ ในขณะเดียวกัน คุณอาจจะใจร้อนและหุนหันพลันแล่นได้ง่าย
+                        </div>
+                        
+                        <h4>คุณลักษณะเด่น</h4>
+                        <div class="traits" id="traits">
+                            <div class="trait">กล้าหาญ</div>
+                            <div class="trait">มีพลัง</div>
+                            <div class="trait">เป็นผู้นำ</div>
+                            <div class="trait">มีความคิดสร้างสรรค์</div>
+                            <div class="trait">ตรงไปตรงมา</div>
+                        </div>
+                        
+                        <h4>คำแนะนำในการใช้ชีวิต</h4>
+                        <p id="life-advice">
+                            ควรฝึกความอดทนและการรับฟังผู้อื่นให้มากขึ้น ระวังการตัดสินใจที่หุนหันพลันแล่น ความสมดุลระหว่างการกระทำและการคิดวิเคราะห์จะช่วยให้คุณประสบความสำเร็จมากยิ่งขึ้น
+                        </p>
+                        
+                        <div class="share-buttons">
+                            <a href="#" class="share-button">แชร์ผลทดสอบ</a>
+                            <a href="#quiz-section" class="btn" id="retake-btn">ทำแบบทดสอบใหม่</a>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+                    
+                    <section id="destiny-section">
+                        <div class="container section-content">
+                            <h2 class="section-title" data-aos="fade-up">ดูดวงตามราศี</h2>
+                            <p class="text-center" data-aos="fade-up" data-aos-delay="100">เลือกราศีของคุณเพื่อดูดวงประจำวันนี้</p>
+                            
+                            <div class="zodiac-grid" data-aos="fade-up" data-aos-delay="200">
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♈</div>
+                                    <p>ราศีเมษ</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♉</div>
+                                    <p>ราศีพฤษภ</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♊</div>
+                                    <p>ราศีเมถุน</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♋</div>
+                                    <p>ราศีกรกฎ</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♌</div>
+                                    <p>ราศีสิงห์</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♍</div>
+                                    <p>ราศีกันย์</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♎</div>
+                                    <p>ราศีตุล</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♏</div>
+                                    <p>ราศีพิจิก</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♐</div>
+                                    <p>ราศีธนู</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♑</div>
+                                    <p>ราศีมังกร</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♒</div>
+                                    <p>ราศีกุมภ์</p>
+                                </div>
+                                
+                                <div class="zodiac-item">
+                                    <div class="zodiac-icon">♓</div>
+                                    <p>ราศีมีน</p>
+                                </div>
+                            </div>
+                            
+                            <div id="horoscope-result" class="horoscope-result">
+                                <h3 class="horoscope-title" id="horoscope-title">ดวงชะตาราศีเมษ</h3>
+                                <div class="horoscope-grid">
+                                    <div class="horoscope-category love">
+                                        <h4>ความรัก</h4>
+                                        <p id="love-horoscope">ช่วงนี้ดวงความรักของคุณอยู่ในเกณฑ์ดี คนโสดมีโอกาสพบเจอคนที่ถูกใจ ส่วนคนมีคู่ความสัมพันธ์จะราบรื่น มีความเข้าใจกันมากขึ้น</p>
+                                    </div>
+                                    
+                                    <div class="horoscope-category work">
+                                        <h4>การงาน</h4>
+                                        <p id="work-horoscope">การงานมีความก้าวหน้า มีโอกาสได้รับมอบหมายงานสำคัญที่แสดงให้เห็นถึงศักยภาพของคุณ ควรรักษาความมุ่งมั่นและความตั้งใจในการทำงาน</p>
+                                    </div>
+                                    
+                                    <div class="horoscope-category money">
+                                        <h4>การเงิน</h4>
+                                        <p id="money-horoscope">การเงินอยู่ในเกณฑ์ปานกลาง มีรายรับรายจ่ายสมดุล ควรระมัดระวังการใช้จ่ายฟุ่มเฟือย อาจมีโชคลาภเล็กๆน้อยๆ</p>
+                                    </div>
+                                    
+                                    <div class="horoscope-category health">
+                                        <h4>สุขภาพ</h4>
+                                        <p id="health-horoscope">สุขภาพโดยรวมดี แต่ควรระวังเรื่องความเครียดและการพักผ่อนที่ไม่เพียงพอ ควรหาเวลาออกกำลังกายและทำกิจกรรมที่ช่วยผ่อนคลาย</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="daily-advice">
+                                    <h4>คำแนะนำประจำวัน</h4>
+                                    <p id="daily-advice">วันนี้เป็นวันที่เหมาะกับการเริ่มต้นสิ่งใหม่ๆ ควรมีความมั่นใจในตัวเองและกล้าที่จะแสดงความสามารถ ระวังอารมณ์หงุดหงิดในช่วงบ่าย การสวมใส่เสื้อผ้าโทนสีแดงหรือส้มจะช่วยเสริมดวงชะตาของคุณ</p>
+                                </div>
+                                
+                                <div class="lucky-numbers">
+                                    <h4>เลขนำโชค</h4>
+                                    <div class="number-circles">
+                                        <div class="number-circle">3</div>
+                                        <div class="number-circle">7</div>
+                                        <div class="number-circle">9</div>
+                                        <div class="number-circle">15</div>
+                                        <div class="number-circle">24</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="compatibility-section">
+                        <div class="container section-content">
+                            <h2 class="section-title" data-aos="fade-up">ดูดวงความเข้ากัน</h2>
+                            <p class="text-center" data-aos="fade-up" data-aos-delay="100">ตรวจสอบความเข้ากันระหว่างคุณกับคนที่คุณสนใจ</p>
+                            
+                            <div class="compatibility-form" data-aos="fade-up" data-aos-delay="200">
+                                <div class="compatibility-grid">
+                                    <div class="compatibility-field">
+                                        <h4>ราศีของคุณ</h4>
+                                        <select id="your-sign">
+                                            <option value="">-- เลือกราศีของคุณ --</option>
+                                            <option value="aries">ราศีเมษ (13 เม.ย. - 13 พ.ค.)</option>
+                                            <option value="taurus">ราศีพฤษภ (14 พ.ค. - 13 มิ.ย.)</option>
+                                            <option value="gemini">ราศีเมถุน (14 มิ.ย. - 14 ก.ค.)</option>
+                                            <option value="cancer">ราศีกรกฎ (15 ก.ค. - 16 ส.ค.)</option>
+                                            <option value="leo">ราศีสิงห์ (17 ส.ค. - 16 ก.ย.)</option>
+                                            <option value="virgo">ราศีกันย์ (17 ก.ย. - 16 ต.ค.)</option>
+                                            <option value="libra">ราศีตุล (17 ต.ค. - 15 พ.ย.)</option>
+                                            <option value="scorpio">ราศีพิจิก (16 พ.ย. - 15 ธ.ค.)</option>
+                                            <option value="sagittarius">ราศีธนู (16 ธ.ค. - 14 ม.ค.)</option>
+                                            <option value="capricorn">ราศีมังกร (15 ม.ค. - 12 ก.พ.)</option>
+                                            <option value="aquarius">ราศีกุมภ์ (13 ก.พ. - 14 มี.ค.)</option>
+                                            <option value="pisces">ราศีมีน (15 มี.ค. - 12 เม.ย.)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="compatibility-field">
+                                        <h4>ราศีของเขา/เธอ</h4>
+                                        <select id="partner-sign">
+                                            <option value="">-- เลือกราศีของเขา/เธอ --</option>
+                                            <option value="aries">ราศีเมษ (13 เม.ย. - 13 พ.ค.)</option>
+                                            <option value="taurus">ราศีพฤษภ (14 พ.ค. - 13 มิ.ย.)</option>
+                                            <option value="gemini">ราศีเมถุน (14 มิ.ย. - 14 ก.ค.)</option>
+                                            <option value="cancer">ราศีกรกฎ (15 ก.ค. - 16 ส.ค.)</option>
+                                            <option value="leo">ราศีสิงห์ (17 ส.ค. - 16 ก.ย.)</option>
+                                            <option value="virgo">ราศีกันย์ (17 ก.ย. - 16 ต.ค.)</option>
+                                            <option value="libra">ราศีตุล (17 ต.ค. - 15 พ.ย.)</option>
+                                            <option value="scorpio">ราศีพิจิก (16 พ.ย. - 15 ธ.ค.)</option>
+                                            <option value="sagittarius">ราศีธนู (16 ธ.ค. - 14 ม.ค.)</option>
+                                            <option value="capricorn">ราศีมังกร (15 ม.ค. - 12 ก.พ.)</option>
+                                            <option value="aquarius">ราศีกุมภ์ (13 ก.พ. - 14 มี.ค.)</option>
+                                            <option value="pisces">ราศีมีน (15 มี.ค. - 12 เม.ย.)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div style="text-align: center; margin-top: 30px;">
+                                    <button id="check-compatibility" class="btn btn-large">ตรวจสอบความเข้ากัน</button>
+                                </div>
+                                
+                                <div id="compatibility-result" class="compatibility-result">
+                                    <div class="compatibility-header">
+                                        <h3>ผลการวิเคราะห์ความเข้ากัน</h3>
+                                    </div>
+                                    
+                                    <div class="compatibility-icons">
+                                        <div class="compatibility-icon">
+                                            <div class="zodiac-icon" id="your-sign-icon">♈</div>
+                                            <p id="your-sign-name">ราศีเมษ</p>
+                                        </div>
+                                        
+                                        <div class="compatibility-heart">❤️</div>
+                                        
+                                        <div class="compatibility-icon">
+                                            <div class="zodiac-icon" id="partner-sign-icon">♌</div>
+                                            <p id="partner-sign-name">ราศีสิงห์</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="compatibility-score">
+                                        <div class="compatibility-percentage" id="compatibility-percentage">85% เข้ากันได้ดีเยี่ยม</div>
+                                        <div class="compatibility-bar">
+                                            <div class="compatibility-progress" id="compatibility-progress" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="compatibility-analysis">
+                                        <h4>การวิเคราะห์ความสัมพันธ์</h4>
+                                        <p class="compatibility-description" id="compatibility-description">ราศีเมษและราศีสิงห์เป็นราศีธาตุไฟเหมือนกัน ทำให้มีความเข้ากันได้ดีเยี่ยม ทั้งคู่มีพลังงานสูง กล้าหาญ และชอบความท้าทาย ความสัมพันธ์จะเต็มไปด้วยความมีชีวิตชีวาและความหลงใหลในสิ่งต่างๆ ร่วมกัน</p>
+                                        
+                                        <div class="compatibility-strengths-weaknesses">
+                                            <div class="compatibility-strengths">
+                                                <h5>จุดแข็งของความสัมพันธ์</h5>
+                                                <ul class="compatibility-list" id="compatibility-strengths">
+                                                    <li>เข้าใจกันและกัน</li>
+                                                    <li>มีความกระตือรือร้นร่วมกัน</li>
+                                                    <li>สนับสนุนความทะเยอทะยานของกันและกัน</li>
+                                                    <li>มีช่วงเวลาสนุกและตื่นเต้นร่วมกัน</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="compatibility-weaknesses">
+                                                <h5>จุดที่ต้องระวัง</h5>
+                                                <ul class="compatibility-list" id="compatibility-weaknesses">
+                                                    <li>อาจมีการแข่งขันกันสูง</li>
+                                                    <li>ทั้งคู่อาจจะดื้อรั้นในบางครั้ง</li>
+                                                    <li>อาจมีความขัดแย้งเรื่องการเป็นผู้นำ</li>
+                                                    <li>ต้องระวังการใช้อารมณ์มากเกินไป</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="compatibility-advice">
+                                            <h5>คำแนะนำสำหรับความสัมพันธ์</h5>
+                                            <p id="compatibility-advice">ทั้งคู่ควรเรียนรู้ที่จะรับฟังกันและกันมากขึ้น และหลีกเลี่ยงการโต้เถียงที่รุนแรง ควรหากิจกรรมที่ท้าทายทำร่วมกันเพื่อเสริมสร้างความสัมพันธ์ให้แน่นแฟ้นยิ่งขึ้น ความอดทนและการประนีประนอมจะช่วยให้ความสัมพันธ์ราบรื่น</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="about-section">
+                        <div class="container section-content">
+                            <h2 class="section-title" data-aos="fade-up">เกี่ยวกับเรา</h2>
+                            <div class="about-content">
+                                <div class="about-text" data-aos="fade-right">
+                                    <h3>ดวงใจไทย - ผู้เชี่ยวชาญด้านโหราศาสตร์และการพัฒนาตนเอง</h3>
+                                    <p>ดวงใจไทย ก่อตั้งขึ้นโดยคณะนักโหราศาสตร์และนักจิตวิทยาชาวไทยที่มีความเชี่ยวชาญในการผสมผสานศาสตร์โบราณเข้ากับความรู้สมัยใหม่ เพื่อช่วยให้ผู้คนได้เข้าใจตนเองและพัฒนาศักยภาพของตนได้อย่างเต็มที่</p>
+                                    <p>เรามุ่งมั่นที่จะนำเสนอการทดสอบบุคลิกภาพและการดูดวงที่มีความแม่นยำ มีหลักการทางวิทยาศาสตร์ควบคู่ไปกับภูมิปัญญาไทยโบราณ เพื่อช่วยให้ผู้ใช้บริการของเราสามารถนำคำแนะนำไปปรับใช้ในชีวิตประจำวันได้อย่างมีประสิทธิภาพ</p>
+                                    <p>ทีมงานของเราประกอบด้วยผู้เชี่ยวชาญในหลากหลายศาสตร์ ทั้งโหราศาสตร์ไทย, จิตวิทยา, และการพัฒนาตนเอง พร้อมให้คำปรึกษาและแนะนำอย่างใกล้ชิด เพื่อช่วยให้คุณค้นพบเส้นทางชีวิตที่เหมาะสมและมีความสุขมากยิ่งขึ้น</p>
+                                </div>
+                                <div class="about-image" data-aos="fade-left">
+                                    <img src="wave.jpg" alt="ทีมงานดวงใจไทย" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer>
+                        <div class="container footer-content">
+                            <div class="footer-logo">✨ ดวงใจไทย ✨</div>
+                            <p class="footer-tagline">ค้นหาตัวตนที่แท้จริงของคุณผ่านการทดสอบบุคลิกภาพและดูดวงแบบไทยๆ</p>
+                            
+                            <div class="footer-links">
+                                <a href="#">หน้าหลัก</a>
+                                <a href="#quiz-section">ทดสอบบุคลิกภาพ</a>
+                                <a href="#destiny-section">ดูดวง</a>
+                                <a href="#compatibility-section">ดูดวงความรัก</a>
+                                <a href="#about-section">เกี่ยวกับเรา</a>
+                            </div>
+                            
+                            <p class="copyright">&copy; 2025 ดวงใจไทย. สงวนลิขสิทธิ์.</p>
+                        </div>
+                    </footer>
+                    
+                    <script>
+                        // เพิ่มฟังก์ชันแชร์
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // ตรวจจับการคลิกปุ่มแชร์
+                            const shareButton = document.querySelector('.share-button');
+                            if (shareButton) {
+                                shareButton.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    
+                                    // ข้อมูลที่จะแชร์
+                                    const personalityType = document.getElementById('personality-type').textContent;
+                                    const shareText = `ฉันได้ทำแบบทดสอบบุคลิกภาพเก้าธาตุจาก "ดวงใจไทย" ผลออกมาเป็น ${personalityType} มาลองทำกันเถอะ!`;
+                                    
+                                    // ตรวจสอบว่ามี Web Share API หรือไม่
+                                    if (navigator.share) {
+                                        navigator.share({
+                                            title: 'ผลการทดสอบบุคลิกภาพเก้าธาตุ',
+                                            text: shareText,
+                                            url: window.location.href
+                                        })
+                                        .then(() => console.log('Shared successfully'))
+                                        .catch((error) => console.log('Error sharing:', error));
+                                    } else {
+                                        // ถ้าไม่รองรับ Web Share API ให้แสดงข้อความให้คัดลอก
+                                        const textArea = document.createElement('textarea');
+                                        textArea.value = `${shareText} ${window.location.href}`;
+                                        textArea.style.position = 'fixed';
+                                        textArea.style.opacity = 0;
+                                        document.body.appendChild(textArea);
+                                        textArea.select();
+                                        document.execCommand('copy');
+                                        document.body.removeChild(textArea);
+                                        
+                                        alert('คัดลอกข้อความสำหรับแชร์แล้ว! คุณสามารถวางข้อความในช่องแชร์ได้เลย');
+                                    }
+                                });
+                            }
+                            // ปรับปรุงการทำงานของ zodiac-item เพื่อให้แสดงดวงได้จริง
+                        const zodiacItems = document.querySelectorAll('.zodiac-item');
+                        zodiacItems.forEach(item => {
+                            item.addEventListener('click', function() {
+                                const zodiacName = this.querySelector('p').textContent;
+                                showDetailedHoroscope(zodiacName);
+                            });
+                        });
+
+                        function showDetailedHoroscope(zodiacName) {
+            const horoscopeResult = document.getElementById('horoscope-result');
+            document.getElementById('horoscope-title').textContent = `ดวงชะตา${zodiacName}`;
+            
+            // สร้างข้อมูลดวงที่แตกต่างกันตามราศี
+            let loveHoroscope, workHoroscope, moneyHoroscope, healthHoroscope, dailyAdvice;
+            
+            switch(zodiacName) {
+                case 'ราศีเมษ':
+                    loveHoroscope = 'ช่วงนี้ดวงความรักของคุณอยู่ในเกณฑ์ดีเยี่ยม มีเกณฑ์ได้พบเนื้อคู่ที่ถูกใจในสถานที่ที่ไม่คาดคิด คนที่มีคู่แล้วจะมีความสุขและเข้าใจกันมากขึ้น';
+                    workHoroscope = 'การงานมีความก้าวหน้าอย่างชัดเจน อาจได้รับการเลื่อนตำแหน่งหรือมอบหมายงานสำคัญ แสดงให้เห็นถึงความสามารถของคุณ';
+                    moneyHoroscope = 'การเงินอยู่ในเกณฑ์ดี มีโชคลาภจากการงาน อาจได้รับรายได้พิเศษหรือของขวัญที่มีมูลค่า';
+                    healthHoroscope = 'สุขภาพโดยรวมแข็งแรง แต่ควรระวังเรื่องอุบัติเหตุเล็กๆน้อยๆ ควรออกกำลังกายสม่ำเสมอ';
+                    dailyAdvice = 'วันนี้เป็นวันแห่งโอกาสใหม่ๆ ควรกล้าที่จะตัดสินใจในสิ่งที่คุณลังเลมานาน สีนำโชค: แดง, ส้ม';
+                    break;
+                case 'ราศีพฤษภ':
+                    loveHoroscope = 'ความรักของคุณกำลังอยู่ในช่วงมั่นคง คนโสดอาจพบคนที่มีความคิดคล้ายกัน คนมีคู่จะมีความสุขในความสัมพันธ์ที่ลงตัว';
+                    workHoroscope = 'การงานราบรื่น มีความมั่นคง แต่อาจมีความท้าทายใหม่ๆให้แก้ไข ควรใช้ความอดทนและความรอบคอบ';
+                    moneyHoroscope = 'การเงินมั่นคง มีเกณฑ์ได้รับผลตอบแทนจากการลงทุนหรือการเก็บออม ควรวางแผนการใช้จ่ายอย่างรอบคอบ';
+                    healthHoroscope = 'สุขภาพโดยรวมดี แต่ควรดูแลเรื่องน้ำหนักและระบบย่อยอาหาร ควรรับประทานอาหารที่มีประโยชน์';
+                    dailyAdvice = 'วันนี้ควรใช้ชีวิตอย่างพอเพียงและมีสติ ไม่ควรใจร้อนหรือเร่งรีบเกินไป สีนำโชค: เขียว, น้ำตาล';
+                    break;
+                // เพิ่มข้อมูลสำหรับราศีอื่นๆ ตามต้องการ
+                default:
+                    loveHoroscope = 'ดวงความรักของคุณกำลังอยู่ในช่วงที่ดี มีโอกาสพบเจอคนที่ถูกใจ ความสัมพันธ์จะราบรื่นและเข้าใจกันมากขึ้น';
+                    workHoroscope = 'การงานมีความก้าวหน้า มีโอกาสได้รับมอบหมายงานสำคัญ ควรรักษาความมุ่งมั่นและความตั้งใจในการทำงาน';
+                    moneyHoroscope = 'การเงินอยู่ในเกณฑ์ดี มีรายรับเพิ่มขึ้น ควรวางแผนการใช้จ่ายและการลงทุนอย่างรอบคอบ';
+                    healthHoroscope = 'สุขภาพโดยรวมแข็งแรง แต่ควรพักผ่อนให้เพียงพอและออกกำลังกายสม่ำเสมอ';
+                    dailyAdvice = 'วันนี้เป็นวันที่เหมาะกับการเริ่มต้นสิ่งใหม่ๆ ควรมีความมั่นใจในตัวเองและกล้าที่จะแสดงความสามารถ';
+            }
+            
+            // ใส่ข้อมูลลงในหน้าเว็บ
+            document.getElementById('love-horoscope').textContent = loveHoroscope;
+            document.getElementById('work-horoscope').textContent = workHoroscope;
+            document.getElementById('money-horoscope').textContent = moneyHoroscope;
+            document.getElementById('health-horoscope').textContent = healthHoroscope;
+            document.getElementById('daily-advice').textContent = dailyAdvice;
+            
+            // แสดงผลดวง
+            horoscopeResult.style.display = 'block';
+            
+            // เลื่อนไปยังผลดวง
+            horoscopeResult.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ทำให้การตรวจสอบความเข้ากันทำงานได้จริงและมีข้อมูลที่แตกต่างกัน
+        const checkCompatibilityBtn = document.getElementById('check-compatibility');
+        if (checkCompatibilityBtn) {
+            checkCompatibilityBtn.addEventListener('click', function() {
+                const yourSign = document.getElementById('your-sign').value;
+                const partnerSign = document.getElementById('partner-sign').value;
+                
+                if (yourSign && partnerSign) {
+                    showDetailedCompatibility(yourSign, partnerSign);
+                } else {
+                    alert('กรุณาเลือกราศีของทั้งคุณและคู่ของคุณ');
+                }
+            });
+        }
+
+        function showDetailedCompatibility(yourSign, partnerSign) {
+            const compatibilityResult = document.getElementById('compatibility-result');
+            const yourSignElement = document.getElementById('your-sign');
+            const partnerSignElement = document.getElementById('partner-sign');
+            
+            // ดึงชื่อราศีแบบเต็ม
+            const yourSignFullName = yourSignElement.options[yourSignElement.selectedIndex].text.split(' ')[0];
+            const partnerSignFullName = partnerSignElement.options[partnerSignElement.selectedIndex].text.split(' ')[0];
+            
+            // ตั้งค่าชื่อราศี
+            document.getElementById('your-sign-name').textContent = yourSignFullName;
+            document.getElementById('partner-sign-name').textContent = partnerSignFullName;
+            
+            // กำหนดซิมโบลของราศี
+            const zodiacSymbols = {
+                'aries': '♈',
+                'taurus': '♉',
+                'gemini': '♊',
+                'cancer': '♋',
+                'leo': '♌',
+                'virgo': '♍',
+                'libra': '♎',
+                'scorpio': '♏',
+                'sagittarius': '♐',
+                'capricorn': '♑',
+                'aquarius': '♒',
+                'pisces': '♓'
+            };
+            
+            document.getElementById('your-sign-icon').innerHTML = zodiacSymbols[yourSign];
+            document.getElementById('partner-sign-icon').innerHTML = zodiacSymbols[partnerSign];
+            
+            // คำนวณความเข้ากัน (ตัวอย่างอย่างง่าย)
+            let compatibilityScore, compatibilityText, strengths, weaknesses, advice;
+            
+            // ถ้าเป็นราศีเดียวกัน
+            if (yourSign === partnerSign) {
+                compatibilityScore = 85;
+                compatibilityText = `${compatibilityScore}% - เข้ากันได้ดีเยี่ยม`;
+                strengths = [
+                    'เข้าใจกันและกันเป็นอย่างดี',
+                    'มีความสนใจและค่านิยมที่คล้ายกัน',
+                    'สื่อสารกันง่าย',
+                    'มีเป้าหมายในชีวิตที่สอดคล้องกัน'
+                ];
+                weaknesses = [
+                    'อาจมีข้อบกพร่องเดียวกัน',
+                    'อาจขาดมุมมองที่หลากหลาย',
+                    'อาจมีความเชื่อที่ไม่ยืดหยุ่น',
+                    'อาจแข่งขันกันในบางเรื่อง'
+                ];
+                advice = 'แม้จะเป็นราศีเดียวกันและเข้าใจกันเป็นอย่างดี แต่ควรเปิดใจรับฟังความคิดเห็นที่แตกต่างและพยายามเติมเต็มจุดอ่อนของกันและกัน การหากิจกรรมใหม่ๆ ทำร่วมกันจะช่วยเสริมสร้างความสัมพันธ์ให้แข็งแกร่ง';
+            }
+            // ถ้าเป็นคู่ราศีที่เข้ากันได้ดี (ตัวอย่าง)
+            else if ((yourSign === 'aries' && partnerSign === 'leo') || 
+                     (yourSign === 'leo' && partnerSign === 'aries')) {
+                compatibilityScore = 92;
+                compatibilityText = `${compatibilityScore}% - เข้ากันได้ดีเยี่ยม`;
+                strengths = [
+                    'มีพลังงานที่ส่งเสริมกัน',
+                    'มีความกระตือรือร้นร่วมกัน',
+                    'รักในการผจญภัยและท้าทาย',
+                    'มีความหลงใหลและโรแมนติกสูง'
+                ];
+                weaknesses = [
+                    'อาจมีอีโก้สูงทั้งคู่',
+                    'อาจแย่งกันเป็นผู้นำ',
+                    'อาจใจร้อนและโมโหง่าย',
+                    'อาจขาดความอดทนในยามวิกฤต'
+                ];
+                advice = 'คู่ราศีไฟเหมือนกัน มีพลังงานและความกระตือรือร้นสูง ควรเรียนรู้ที่จะควบคุมอารมณ์และรับฟังกันมากขึ้น การทำกิจกรรมที่ท้าทายร่วมกันจะช่วยเสริมความสัมพันธ์ให้แข็งแกร่ง ควรให้พื้นที่ส่วนตัวแก่กันในบางครั้ง';
+            } 
+            // กรณีอื่นๆ (สามารถเพิ่มเงื่อนไขตามต้องการ)
+            else {
+                // สุ่มค่าสำหรับตัวอย่าง
+                compatibilityScore = Math.floor(Math.random() * 21) + 70; // 70-90
+                compatibilityText = `${compatibilityScore}% - เข้ากันได้ดี`;
+                strengths = [
+                    'มีความสนใจบางอย่างร่วมกัน',
+                    'สามารถเรียนรู้จากกันและกัน',
+                    'เติมเต็มในสิ่งที่อีกฝ่ายขาด',
+                    'มีมุมมองที่หลากหลาย'
+                ];
+                weaknesses = [
+                    'อาจมีความเข้าใจผิดในการสื่อสาร',
+                    'มีวิธีการแก้ปัญหาที่แตกต่างกัน',
+                    'อาจมีความต้องการที่ไม่ตรงกัน',
+                    'ต้องปรับตัวเข้าหากันมากขึ้น'
+                ];
+                advice = 'ควรเรียนรู้ที่จะเข้าใจและยอมรับความแตกต่างของกันและกัน การสื่อสารอย่างเปิดเผยและจริงใจจะช่วยลดความเข้าใจผิด ควรหากิจกรรมที่ทั้งคู่ชื่นชอบเพื่อสร้างความผูกพัน';
+            }
+            
+            // ใส่ข้อมูลลงในหน้าเว็บ
+            document.getElementById('compatibility-percentage').textContent = compatibilityText;
+            document.getElementById('compatibility-progress').style.width = `${compatibilityScore}%`;
+            document.getElementById('compatibility-description').textContent = `${yourSignFullName}และ${partnerSignFullName}มีความเข้ากันอยู่ที่ ${compatibilityScore}% ทั้งคู่มีลักษณะนิสัยและพลังงานที่สามารถส่งเสริมกันได้ดี แม้จะมีความแตกต่างในบางด้าน แต่สามารถเติมเต็มซึ่งกันและกันได้อย่างลงตัว`;
+            
+            // ใส่ข้อมูลจุดแข็งและจุดอ่อน
+            const strengthsList = document.getElementById('compatibility-strengths');
+            const weaknessesList = document.getElementById('compatibility-weaknesses');
+            
+            strengthsList.innerHTML = '';
+            weaknessesList.innerHTML = '';
+            
+            strengths.forEach(strength => {
+                const li = document.createElement('li');
+                li.textContent = strength;
+                strengthsList.appendChild(li);
+            });
+            
+            weaknesses.forEach(weakness => {
+                const li = document.createElement('li');
+                li.textContent = weakness;
+                weaknessesList.appendChild(li);
+            });
+            
+            // ใส่คำแนะนำ
+            document.getElementById('compatibility-advice').textContent = advice;
+            
+            // แสดงผลการวิเคราะห์
+            compatibilityResult.style.display = 'block';
+            
+            // เลื่อนไปยังผลการวิเคราะห์
+            compatibilityResult.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+                        // Create stars in background
+                        function createStars() {
+                            const starCount = 200;
+                            const starBg = document.querySelector('.star-bg');
+                            
+                            for (let i = 0; i < starCount; i++) {
+                                const star = document.createElement('div');
+                                star.className = 'star';
+                                star.style.width = `${Math.random() * 2 + 1}px`;
+                                star.style.height = star.style.width;
+                                star.style.left = `${Math.random() * 100}%`;
+                                star.style.top = `${Math.random() * 100}%`;
+                                star.style.animationDelay = `${Math.random() * 5}s`;
+                                starBg.appendChild(star);
+                            }
+                            
+                            // Create occasional shooting stars
+                            setInterval(() => {
+                                if (Math.random() > 0.7) {
+                                    const shootingStar = document.createElement('div');
+                                    shootingStar.className = 'shooting-star';
+                                    shootingStar.style.left = `${Math.random() * 100}%`;
+                                    shootingStar.style.top = `${Math.random() * 50}%`;
+                                    shootingStar.style.width = `${Math.random() * 50 + 30}px`;
+                                    shootingStar.style.height = '1px';
+                                    shootingStar.style.opacity = '0';
+                                    shootingStar.style.transform = `rotate(${Math.random() * 45 + 20}deg)`;
+                                    
+                                    starBg.appendChild(shootingStar);
+                                    
+                                    // Animate the shooting star
+                                    setTimeout(() => {
+                                        shootingStar.style.transition = 'all 1s linear';
+                                        shootingStar.style.opacity = '1';
+                                        shootingStar.style.left = `${parseFloat(shootingStar.style.left) + 15}%`;
+                                        shootingStar.style.top = `${parseFloat(shootingStar.style.top) + 15}%`;
+                                        
+                                        setTimeout(() => {
+                                            shootingStar.style.opacity = '0';
+                                            setTimeout(() => {
+                                                shootingStar.remove();
+                                            }, 1000);
+                                        }, 1000);
+                                    }, 100);
+                                }
+                            }, 2000);
+                        }
+                        
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Initialize AOS animations
+                            AOS.init({
+                                duration: 800,
+                                easing: 'ease-in-out',
+                                once: true
+                            });
+                            
+                            // Create starry background
+                            createStars();
+                            
+                            // Quiz functionality
+                            const questions = document.querySelectorAll('.question');
+                            const nextBtn = document.getElementById('next-btn');
+                            const prevBtn = document.getElementById('prev-btn');
+                            const progressBar = document.getElementById('progress-bar');
+                            const resultSection = document.getElementById('result-section');
+                            const questionContainer = document.getElementById('question-container');
+                            const retakeBtn = document.getElementById('retake-btn');
+                            
+                            let currentQuestion = 0;
+                            let selectedAnswers = {};
+                            
+                            // Initialize quiz
+                            updateQuestion();
+                            
+                            // Option selection
+                            document.querySelectorAll('.option').forEach(option => {
+                                option.addEventListener('click', function() {
+                                    const questionId = this.closest('.question').dataset.id;
+                                    const questionOptions = this.closest('.question').querySelectorAll('.option');
+                                    
+                                    // Remove selected class from all options
+                                    questionOptions.forEach(opt => opt.classList.remove('selected'));
+                                    
+                                    // Add selected class to clicked option
+                                    this.classList.add('selected');
+                                    
+                                    // Store the selected answer
+                                    selectedAnswers[questionId] = this.dataset.type;
+                                    
+                                    // Enable next button
+                                    nextBtn.disabled = false;
+                                });
+                            });
+                            
+                            // Next button click
+                            nextBtn.addEventListener('click', function() {
+                                currentQuestion++;
+                                
+                                if (currentQuestion >= questions.length) {
+                                    // Show result
+                                    showResult();
+                                } else {
+                                    updateQuestion();
+                                }
+                            });
+                            
+                            // Previous button click
+                            prevBtn.addEventListener('click', function() {
+                                currentQuestion--;
+                                updateQuestion();
+                            });
+                            
+                            // Retake quiz button
+                            retakeBtn.addEventListener('click', function() {
+                                currentQuestion = 0;
+                                selectedAnswers = {};
+                                resultSection.style.display = 'none';
+                                questionContainer.style.display = 'block';
+                                updateQuestion();
+                            });
+                            
+                            // Update question display
+                            function updateQuestion() {
+                                questions.forEach((question, index) => {
+                                    if (index === currentQuestion) {
+                                        question.classList.add('active');
+                                    } else {
+                                        question.classList.remove('active');
+                                    }
+                                });
+                                
+                                // Update progress bar
+                                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                                progressBar.style.width = `${progress}%`;
+                                
+                                // Update buttons
+                                if (currentQuestion > 0) {
+                                    prevBtn.style.display = 'block';
+                                } else {
+                                    prevBtn.style.display = 'none';
+                                }
+                                
+                                // Check if the current question has a selected answer
+                                const currentQuestionId = questions[currentQuestion].dataset.id;
+                                nextBtn.disabled = !selectedAnswers[currentQuestionId];
+                                
+                                // Update button text for last question
+                                if (currentQuestion === questions.length - 1) {
+                                    nextBtn.textContent = 'ดูผลลัพธ์';
+                                } else {
+                                    nextBtn.textContent = 'ถัดไป';
+                                }
+                            }
+                            
+                            // Show result
+                            function showResult() {
+                                // Count the occurrences of each element type
+                                const typeCounts = {};
+                                Object.values(selectedAnswers).forEach(type => {
+                                    typeCounts[type] = (typeCounts[type] || 0) + 1;
+                                });
+                                
+                                // Find the most common element type
+                                let dominantType = '';
+                                let maxCount = 0;
+                                
+                                for (const type in typeCounts) {
+                                    if (typeCounts[type] > maxCount) {
+                                        maxCount = typeCounts[type];
+                                        dominantType = type;
+                                    }
+                                }
+                                
+                                // Set result based on dominant type
+                                const personalityType = document.getElementById('personality-type');
+                                const personalityDescription = document.getElementById('personality-description');
+                                const traits = document.getElementById('traits');
+                                const lifeAdvice = document.getElementById('life-advice');
+                                const resultImage = document.getElementById('result-image').firstElementChild;
+                                
+                                switch (dominantType) {
+                                    case 'fire':
+                                        personalityType.textContent = 'ธาตุไฟ (จิตวิญญาณแห่งความกล้าหาญ)';
+                                        personalityDescription.textContent = 'คุณเป็นคนมีพลังงานสูง กล้าหาญ และมีความมุ่งมั่น คุณชอบความท้าทายและไม่กลัวที่จะเสี่ยง คุณมีความเป็นผู้นำสูงและสามารถสร้างแรงบันดาลใจให้ผู้อื่นได้ ในขณะเดียวกัน คุณอาจจะใจร้อนและหุนหันพลันแล่นได้ง่าย';
+                                        traits.innerHTML = `
+                                            <div class="trait">กล้าหาญ</div>
+                                            <div class="trait">มีพลัง</div>
+                                            <div class="trait">เป็นผู้นำ</div>
+                                            <div class="trait">มีความคิดสร้างสรรค์</div>
+                                            <div class="trait">ตรงไปตรงมา</div>
+                                        `;
+                                        lifeAdvice.textContent = 'ควรฝึกความอดทนและการรับฟังผู้อื่นให้มากขึ้น ระวังการตัดสินใจที่หุนหันพลันแล่น ความสมดุลระหว่างการกระทำและการคิดวิเคราะห์จะช่วยให้คุณประสบความสำเร็จมากยิ่งขึ้น';
+                                        resultImage.innerHTML = '🔥';
+                                        resultImage.style.backgroundColor = '#e74c3c';
+                                        break;
+                                        
+                                    case 'earth':
+                                        personalityType.textContent = 'ธาตุดิน (จิตวิญญาณแห่งความมั่นคง)';
+                                        personalityDescription.textContent = 'คุณเป็นคนที่มีความมั่นคงและเชื่อถือได้ คุณชอบความแน่นอนและมีระเบียบแบบแผน คุณมีความรับผิดชอบสูงและเป็นที่พึ่งพาของผู้อื่นได้ คุณทำงานอย่างหนักและมีความอดทนสูง แต่ในบางครั้งคุณอาจจะดื้อรั้นและไม่ยืดหยุ่น';
+                                        traits.innerHTML = `
+                                            <div class="trait">มั่นคง</div>
+                                            <div class="trait">น่าเชื่อถือ</div>
+                                            <div class="trait">รับผิดชอบ</div>
+                                            <div class="trait">มีระเบียบ</div>
+                                            <div class="trait">อดทน</div>
+                                        `;
+                                        lifeAdvice.textContent = 'ควรเปิดใจให้กว้างและยอมรับการเปลี่ยนแปลงมากขึ้น อย่ายึดติดกับความคิดเดิมๆมากเกินไป การผ่อนคลายและปล่อยวางบ้างจะช่วยให้คุณมีความสุขในชีวิตมากขึ้น';
+                                        resultImage.innerHTML = '🌱';
+                                        resultImage.style.backgroundColor = '#2ecc71';
+                                        break;
+                                        
+                                    case 'water':
+                                        personalityType.textContent = 'ธาตุน้ำ (จิตวิญญาณแห่งความรู้สึก)';
+                                        personalityDescription.textContent = 'คุณเป็นคนที่มีความรู้สึกลึกซึ้งและมีความเห็นอกเห็นใจสูง คุณเข้าใจความรู้สึกของผู้อื่นได้ดีและมีความเมตตา คุณมีความคิดสร้างสรรค์และจินตนาการที่ดี แต่ในบางครั้งคุณอาจจะอ่อนไหวเกินไปและหมกมุ่นกับความรู้สึกของตัวเอง';
+                                        traits.innerHTML = `
+                                            <div class="trait">เห็นอกเห็นใจ</div>
+                                            <div class="trait">มีความรู้สึกลึกซึ้ง</div>
+                                            <div class="trait">สร้างสรรค์</div>
+                                            <div class="trait">เข้าใจผู้อื่น</div>
+                                            <div class="trait">ช่างฝัน</div>
+                                        `;
+                                        lifeAdvice.textContent = 'ควรรักษาความสมดุลทางอารมณ์และไม่ปล่อยให้ความรู้สึกควบคุมตัวเองมากเกินไป การแยกแยะระหว่างเรื่องส่วนตัวและเรื่องของผู้อื่นจะช่วยให้คุณไม่แบกรับภาระมากเกินไป';
+                                        resultImage.innerHTML = '🌊';
+                                        resultImage.style.backgroundColor = '#3498db';
+                                        break;
+                                        
+                                    case 'air':
+                                        personalityType.textContent = 'ธาตุลม (จิตวิญญาณแห่งปัญญา)';
+                                        personalityDescription.textContent = 'คุณเป็นคนที่มีความคิดและสติปัญญาดี คุณชอบการเรียนรู้และค้นคว้าสิ่งใหม่ๆ คุณมีความคิดที่เป็นอิสระและไม่ชอบถูกจำกัด คุณมีการสื่อสารที่ดีและความสามารถในการคิดวิเคราะห์ แต่ในบางครั้งคุณอาจจะคิดมากเกินไปและไม่ค่อยลงมือทำ';
+                                        traits.innerHTML = `
+                                            <div class="trait">ฉลาด</div>
+                                            <div class="trait">มีเหตุผล</div>
+                                            <div class="trait">อิสระ</div>
+                                            <div class="trait">ช่างคิด</div>
+                                            <div class="trait">สื่อสารดี</div>
+                                        `;
+                                        lifeAdvice.textContent = 'ควรฝึกการลงมือทำและไม่คิดมากจนเกินไป การเชื่อมโยงความคิดเข้ากับความรู้สึกและการลงมือปฏิบัติจะช่วยให้คุณประสบความสำเร็จได้มากขึ้น ควรหาเวลาพักผ่อนและไม่ตื่นตัวทางความคิดตลอดเวลา';
+                                        resultImage.innerHTML = '🍃';
+                                        resultImage.style.backgroundColor = '#9b59b6';
+                                        break;
+                                        
+                                    default:
+                                        personalityType.textContent = 'ธาตุไฟ (จิตวิญญาณแห่งความกล้าหาญ)';
+                                        personalityDescription.textContent = 'คุณเป็นคนมีพลังงานสูง กล้าหาญ และมีความมุ่งมั่น คุณชอบความท้าทายและไม่กลัวที่จะเสี่ยง คุณมีความเป็นผู้นำสูงและสามารถสร้างแรงบันดาลใจให้ผู้อื่นได้ ในขณะเดียวกัน คุณอาจจะใจร้อนและหุนหันพลันแล่นได้ง่าย';
+                                        traits.innerHTML = `
+                                            <div class="trait">กล้าหาญ</div>
+                                            <div class="trait">มีพลัง</div>
+                                            <div class="trait">เป็นผู้นำ</div>
+                                            <div class="trait">มีความคิดสร้างสรรค์</div>
+                                            <div class="trait">ตรงไปตรงมา</div>
+                                        `;
+                                        lifeAdvice.textContent = 'ควรฝึกความอดทนและการรับฟังผู้อื่นให้มากขึ้น ระวังการตัดสินใจที่หุนหันพลันแล่น ความสมดุลระหว่างการกระทำและการคิดวิเคราะห์จะช่วยให้คุณประสบความสำเร็จมากยิ่งขึ้น';
+                                        resultImage.innerHTML = '🔥';
+                                        resultImage.style.backgroundColor = '#e74c3c';
+                                }
+                                
+                                // Hide questions and show result
+                                questionContainer.style.display = 'none';
+                                resultSection.style.display = 'block';
+                            }
+                            
+                            // Horoscope functionality
+                            const zodiacItems = document.querySelectorAll('.zodiac-item');
+                            const horoscopeResult = document.getElementById('horoscope-result');
+                            
+                            zodiacItems.forEach(item => {
+                                item.addEventListener('click', function() {
+                                    const zodiacName = this.querySelector('p').textContent;
+                                    showHoroscope(zodiacName);
+                                });
+                            });
+                            
+                            function showHoroscope(zodiacName) {
+                                document.getElementById('horoscope-title').textContent = `ดวงชะตา${zodiacName}`;
+                                horoscopeResult.style.display = 'block';
+                                
+                                // Generate random horoscope (for demo purposes)
+                                const loveHoroscopes = [
+                                    'ช่วงนี้ดวงความรักของคุณอยู่ในเกณฑ์ดี คนโสดมีโอกาสพบเจอคนที่ถูกใจ ส่วนคนมีคู่ความสัมพันธ์จะราบรื่น มีความเข้าใจกันมากขึ้น',
+                                    'ความรักของคุณกำลังอยู่ในช่วงที่ต้องใช้ความอดทน อาจมีปัญหาเล็กน้อยเกิดขึ้น แต่หากคุณรับฟังกันและกัน ทุกอย่างจะผ่านไปได้ด้วยดี',
+                                    'ดวงความรักของคุณกำลังเปิด คนโสดมีเกณฑ์ได้พบเนื้อคู่ในสถานที่ที่ไม่คาดคิด ส่วนคนมีคู่จะมีช่วงเวลาแห่งความสุขและความโรแมนติก'
+                                ];
+                                
+                                const workHoroscopes = [
+                                    'การงานมีความก้าวหน้า มีโอกาสได้รับมอบหมายงานสำคัญที่แสดงให้เห็นถึงศักยภาพของคุณ ควรรักษาความมุ่งมั่นและความตั้งใจในการทำงาน',
+                                    'อาจมีอุปสรรคในการทำงานบ้าง แต่คุณจะสามารถแก้ไขได้ด้วยความสามารถของตัวเอง ควรระวังความขัดแย้งกับเพื่อนร่วมงานหรือผู้บังคับบัญชา',
+                                    'โอกาสก้าวหน้าในหน้าที่การงานมีสูง อาจได้รับการเลื่อนตำแหน่งหรือมีโครงการใหม่ๆที่ท้าทายความสามารถ เหมาะกับการเสนอความคิดใหม่ๆ'
+                                ];
+                                
+                                document.getElementById('love-horoscope').textContent = loveHoroscopes[Math.floor(Math.random() * loveHoroscopes.length)];
+                                document.getElementById('work-horoscope').textContent = workHoroscopes[Math.floor(Math.random() * workHoroscopes.length)];
+                                
+                                // Scroll to result
+                                horoscopeResult.scrollIntoView({ behavior: 'smooth' });
+                            }
+                            
+                            // Compatibility functionality
+                            const checkCompatibilityBtn = document.getElementById('check-compatibility');
+                            const compatibilityResult = document.getElementById('compatibility-result');
+                            
+                            checkCompatibilityBtn.addEventListener('click', function() {
+                                const yourSign = document.getElementById('your-sign').value;
+                                const partnerSign = document.getElementById('partner-sign').value;
+                                
+                                if (yourSign && partnerSign) {
+                                    // Show compatibility result with animation
+                                    compatibilityResult.style.display = 'block';
+                                    
+                                    // Generate random compatibility score (for demo purposes)
+                                    const compatibilityScore = Math.floor(Math.random() * 30) + 70; // 70-99%
+                                    document.getElementById('compatibility-percentage').textContent = `${compatibilityScore}% เข้ากันได้ดี`;
+                                    document.getElementById('compatibility-progress').style.width = `${compatibilityScore}%`;
+                                    
+                                    // Update sign names
+                                    const yourSignName = document.getElementById('your-sign').options[document.getElementById('your-sign').selectedIndex].text.split(' ')[0];
+                                    const partnerSignName = document.getElementById('partner-sign').options[document.getElementById('partner-sign').selectedIndex].text.split(' ')[0];
+                                    document.getElementById('your-sign-name').textContent = yourSignName;
+                                    document.getElementById('partner-sign-name').textContent = partnerSignName;
+                                    
+                                    // Generate description (simplified for demo)
+                                    document.getElementById('compatibility-description').textContent = `${yourSignName}และ${partnerSignName}มีความเข้ากันได้ในระดับ ${compatibilityScore}% คุณทั้งคู่มีลักษณะนิสัยที่ส่งเสริมกัน แม้จะมีความแตกต่างในบางด้าน แต่สามารถเติมเต็มซึ่งกันและกันได้`;
+                                    
+                                    // Scroll to result
+                                    compatibilityResult.scrollIntoView({ behavior: 'smooth' });
+                                } else {
+                                    alert('กรุณาเลือกราศีของทั้งคุณและคู่ของคุณ');
+                                }
+                            });
+                        });
+                    </script>

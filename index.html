@@ -1666,17 +1666,41 @@
         /* เพิ่ม media query สำหรับหน้าจอที่เล็กมากๆ */
         @media (max-width: 768px) {
             nav {
-                background-color: rgba(26, 26, 46, 0.7); /* เพิ่มความโปร่งใส */
-                backdrop-filter: blur(10px);
-            }
-            
-            .nav-overlay {
-                background-color: rgba(0, 0, 0, 0.3); /* ทำให้พื้นหลังโปร่งใสมากขึ้น */
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 70px;
+            transition: right 0.3s ease;
+            z-index: 999;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .nav-overlay.active {
+            display: block;
         }
         
         @keyframes float {
